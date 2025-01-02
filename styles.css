@@ -9,13 +9,14 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: #57ebeb52;
     /* height: 100vh; */
     
 }
 
 body {
+    background-color: #57ebeb52;
     position: relative;
+    transition: background-color 300ms ease;
 }
 
 
@@ -40,7 +41,9 @@ body {
 
 }
 
-
+input:focus{
+    outline: none;
+}
 
 
 
@@ -142,19 +145,25 @@ nav {
     max-width: 1200px;
     box-shadow: 0 8px 24px #1a2042da;
     z-index: 5;
+    transition: background-color 300ms ease;
     /* background-color: rgb(90, 95, 128); */
 }
 
+.nav__links {
+    display: flex;
+}
 
 .nav__link {
     padding: 0 12px;
     font-size: 20px;
     font-weight: 500;
     color: black;
+    transition: color 300ms ease;
 }
 
 .fa-moon {
-    transition: all 150ms ease;
+    transition: animation 150ms ease; 
+    transition: color 300ms ease;
 }
 .fa-moon:hover {
     transform: rotate(15deg);
@@ -262,6 +271,7 @@ HEADER
 
 .header__title {
     margin-left: 8px;
+    transition: color 300ms ease;
 }
 
 .search {
@@ -277,12 +287,19 @@ HEADER
     height: 60px;
     border: none;
     border-radius: 12px;
+    transition: background-color 300ms ease;
+
+}
+
+.search-box::placeholder {
+    transition: color 300ms ease;
 }
 
 .search__btn {
     margin-left: 12px;
     padding: 16px;
     border-radius: 12px;
+    transition: all 300ms ease;
 
 }
 
@@ -293,6 +310,7 @@ HEADER
     font-weight: 500;
     max-height: 414px;
     overflow: hidden;
+    transition: color 300ms ease;
 }
 
 .header__img {
@@ -311,16 +329,19 @@ HEADER
 
 .header__btns {
     padding: 20px 36px;
+    transition: all 300ms ease;
 }
 
 .fa-arrow-right {
     color: #3646acda;
+    transition: color 300ms ease;
 }
 .icon__border {
     background-color: rgba(255, 255, 255, 0.767);
     padding: 2px 6px;
     border-radius: 50%;
     margin-left: 40px;
+    transition: background-color 300ms ease;
 }
 
 
@@ -330,7 +351,9 @@ HEADER
     background-color: #c8c5fc69;
     padding: 20px;
     border-radius: 20px;
+    transition: background-color 300ms ease;
 }
+
 
 /*
 
@@ -348,6 +371,7 @@ SHARE BOX
     font-size: 20px;
     font-weight: 500;
     margin-right: 12px;
+    transition: color 300ms ease;
 }
 
 .share__btns {
@@ -438,6 +462,7 @@ PAGE BODY
     padding: 20px;
     margin-bottom: 8px;
     cursor: pointer;
+    transition: background-color 300ms ease;
 }
 
 .post__info {
@@ -511,9 +536,25 @@ PAGE BODY
 }
 
 .body__title,
+.body__para,
+.body__details,
+.body__list-item,
+.posts__title,
+.post__info-1,
+.post__title,
+.post__comment--count,
+.post__para,
+.footer__row {
+    transition: color 300ms ease;
+}
+
+
+.body__title,
 .body__details {
     margin: 16px 0;
 }
+
+
 
 .body__para,
 .body__list-item {
@@ -551,6 +592,90 @@ footer {
     display: flex;
     justify-content: center;
 }
+
+/*
+
+DARK THEME
+
+*/
+
+.dark-theme { 
+    background-color: #231041de;
+}
+.dark-theme nav {
+    background-color: #162791da;
+}
+
+.dark-theme .nav__link,
+.dark-theme .body__title,
+.dark-theme .body__para,
+.dark-theme .body__details,
+.dark-theme .posts__title,
+.dark-theme .body__list-item,
+.dark-theme .post__title,
+.dark-theme .post__more,
+.dark-theme .footer__row {
+    color: #fff;
+}
+
+
+.dark-theme .share__text,
+.dark-theme .post__info-1,
+.dark-theme .post__comment--count,
+.dark-theme .post__para,
+.dark-theme .post__username {
+    color: #dfdfdf;
+}
+
+.dark-theme .link__hover-effect:after {
+    background-color: #fff;
+}
+.dark-theme .header__img--cover {
+    background-image: linear-gradient(to right, #756fc4 43%, #554deba2 75%, #554deb38);;
+}
+.dark-theme 
+.dark-theme .site__title--wrapper,
+.dark-theme .header__title,
+.dark-theme .search__btn,
+.dark-theme .header__para,
+.dark-theme .header__btn {
+    color: #000000;
+}
+
+.dark-theme .search__btn,
+.dark-theme .header__btns {
+    background-color: #6f80f3fa;
+} 
+
+.dark-theme .icon__border {
+    background-color: #000000;
+}
+
+.dark-theme .fa-arrow-right {
+    color: #b4beffda;
+}
+
+.dark-theme .search-box {
+    background-color: #9696a78c;
+}
+
+.dark-theme .search-box::placeholder {
+    color: #cecece;
+}
+
+.dark-theme .whole__body {
+    background-color: #0d0a429c;
+}
+
+.dark-theme .post {
+    background-color: #2a3a697a;
+}
+
+.dark-theme .chosen-color,
+.dark-theme .post__username:hover {
+    color: #0a66c2;
+}
+
 
 
 
