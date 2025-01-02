@@ -9,9 +9,49 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: rgba(87, 235, 235, 0.322);
+    background-color: #57ebeb52;
     /* height: 100vh; */
+    
 }
+
+body {
+    position: relative;
+}
+
+/* .banner__cover {
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(to right, #57ebeb42 43%, #57ebeb48 75%, #57ebeb0e 100% ) ;
+    z-index: 0;
+    filter: blur(1px);
+} */
+
+.banner1 {
+    position: fixed;
+    width: 20%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: .1;
+    filter: grayscale(1);
+}
+
+.banner2 {
+    position: fixed;
+    width: 20%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    opacity: .1;
+    filter: grayscale(1);
+
+}
+
+
+
 
 
 h1 {
@@ -111,6 +151,7 @@ nav {
     width: 100%;
     max-width: 1200px;
     box-shadow: 0 8px 24px #1a2042da;
+    z-index: 5;
     /* background-color: rgb(90, 95, 128); */
 }
 
@@ -289,6 +330,15 @@ HEADER
     margin-left: 40px;
 }
 
+
+/* yarp */
+
+.whole__body {
+    background-color: #c8c5fc69;
+    padding: 20px;
+    border-radius: 20px;
+}
+
 /*
 
 SHARE BOX 
@@ -298,6 +348,7 @@ SHARE BOX
 .share__container {
     display: flex;
     align-items: center;
+    padding: 0 24px;
 }
 
 .share__text {
@@ -486,6 +537,10 @@ PAGE BODY
 FOOTER
 
 */
+
+footer {
+    overflow: hidden;
+}
 
 .footer__container {
     padding: 60px 0;
