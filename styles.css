@@ -156,6 +156,7 @@ nav {
 
 .nav__links {
     display: flex;
+    justify-content: space-between;
 }
 
 .nav__link {
@@ -168,16 +169,19 @@ nav {
 
 .fa-moon,
 .fa-sun {
-    transition: color 300ms ease;
+    transition: 
+    color 300ms ease,
+    transform 300ms ease;
     animation:
-    /* eight-trigrams-sixty-four-palms 150ms linear 1,  */
-    wiggle 3s linear infinite;
-    /* transform: rotate(15deg); */
+    wiggle 1750ms linear infinite;
 }
-.fa-moon:hover,
-.fa-sun:hover {
-    animation: none;
+
+.fa-moon:hover:active,
+.fa-sun:hover:active {
+    animation:
+    eight-trigrams-sixty-four-palms 150ms linear 1, 
 }
+
 
 
 
@@ -726,7 +730,8 @@ DARK THEME
     }
 
     .search-box {
-        height: 48px;        
+        height: 48px; 
+        font-size: 16px;       
     }
     .search__btn {
         font-size: 16px;
@@ -824,7 +829,6 @@ DARK THEME
 
     .search-box {
         height: 40px;
-        font-size: 16px;
     }
 
     .header__btns {
