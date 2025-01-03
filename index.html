@@ -9,27 +9,26 @@
       src="https://kit.fontawesome.com/a65f9364e6.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <div class="banner__cover"></div>
-    <img class="banner1" src="./assets/BannerTest.svg">
-    <img class="banner2" src="./assets/BannerTest.svg">
+    <img class="banner1" src="./assets/CompleteBanner.svg">
+    <img class="banner2" src="./assets/CompleteBanner.svg">
     <section id="landing-page">
       <nav>
         <div class="nav__links">
           <a href="" class="nav__link link__hover-effect">Home</a>
-          <a href="" class="nav__link link__hover-effect">Movies</a>
-          <a href="" class="nav__link link__hover-effect">Manga</a>
-          <a href="" class="nav__link link__hover-effect">Shows</a>
+          <a href="" class="nav__link link__hover-effect link__drop">Movies</a>
+          <a href="" class="nav__link link__hover-effect link__drop">Manga</a>
+          <a href="" class="nav__link link__hover-effect link__drop">Shows</a>
           <a href="" class="nav__link link__hover-effect">Featured</a>
           <a href="" class="nav__link link__hover-effect">Personal List</a>
-          <a href="" class="nav__link nav__link--primary link__hover-effect"
+          <a href="" class="nav__link link__drop nav__link--primary link__hover-effect"
             >Contact</a
           >
           <div class="nav__link"
-            ><i class="fa-solid fa-moon" onclick="toggleContrast()"></i>
-            <!-- <i class="fa-solid fa-sun"></i> -->
+            ><i class="fa-solid fa-moon" onclick="toggleClass(this), toggleContrast()"></i>
         </div>
         </div>
       </nav>
@@ -76,15 +75,15 @@
 <div class="row">
     <div class="whole__body">
     <div class="share__container">
-        <div class="share__text">
+        <div class="share__text ">
             <b class="chosen-color">Share Anithon</b><br> to your friends!
         </div>
         <div class="share__btns">
-            <button class="share__btn share__btn--lnkdn btn"><i class="fa-brands fa-linkedin-in"></i><label class="share__label" for="">Share</label></button>
-            <button class="share__btn share__btn--X btn"><i class="fa-brands fa-x-twitter"></i><label class="share__label" for="">Share</label></button>
-            <button class="share__btn share__btn--meta btn"><i class="fa-brands fa-meta"></i><label class="share__label" for="">Share</label></button>
-            <button class="share__btn share__btn--reddit btn"><i class="fa-brands fa-reddit-alien"></i><label class="share__label" for="">Share</label></button>
-            <button class="share__btn share__btn--generic btn"><i class="fa-solid fa-share"></i><label class="share__label" for="">Link Share</label></button>
+            <button class="nope share__btn share__btn--lnkdn btn"><i class="fa-brands fa-linkedin-in"></i><label class="share__label" for="">Share</label></button>
+            <button class="nope share__btn share__btn--X btn"><i class="fa-brands fa-x-twitter"></i><label class="share__label" for="">Share</label></button>
+            <button class="nope share__btn share__btn--meta btn"><i class="fa-brands fa-meta"></i><label class="share__label" for="">Share</label></button>
+            <button class="nope share__btn share__btn--reddit btn"><i class="fa-brands fa-reddit-alien"></i><label class="share__label" for="">Share</label></button>
+            <button class="nope share__btn share__btn--generic btn"><i class="fa-solid fa-share"></i><label class="share__label" for="">Link Share</label></button>
         </div>
     </div>
     <div class="body__container">
@@ -125,7 +124,7 @@
                 <figure class="post__user--profile-img">
                     <img class="post__user--profile-img" src="./assets/Anime Profile Example.webp" alt="">
                 </figure>
-                <div class="post__username">DevinciCardiac49</div>
+                <div class="nope post__username">DevinciCardiac49</div>
             </div>
         </div>
         <div class="post">
@@ -145,7 +144,7 @@
                 <figure class="post__user--profile-img">
                     <img class="post__user--profile-img" src="./assets/Anime Profile Example.webp" alt="">
                 </figure>
-                <div class="post__username">DevinciCardiac49</div>
+                <div class="nope post__username">DevinciCardiac49</div>
             </div>
         </div>
         <div class="post">
@@ -165,7 +164,7 @@
                 <figure class="post__user--profile-img">
                     <img class="post__user--profile-img" src="./assets/Anime Profile Example.webp" alt="">
                 </figure>
-                <div class="post__username">DevinciCardiac49</div>
+                <div class="nope post__username">DevinciCardiac49</div>
             </div>
         </div>
         <div class="post">
@@ -185,7 +184,7 @@
                 <figure class="post__user--profile-img">
                     <img class="post__user--profile-img" src="./assets/Anime Profile Example.webp" alt="">
                 </figure>
-                <div class="post__username">DevinciCardiac49</div>
+                <div class="nope post__username">DevinciCardiac49</div>
             </div>
         </div>
         <div class="post">
@@ -205,7 +204,7 @@
                 <figure class="post__user--profile-img">
                     <img class="post__user--profile-img" src="./assets/Anime Profile Example.webp" alt="">
                 </figure>
-                <div class="post__username">DevinciCardiac49</div>
+                <div class="nope post__username">DevinciCardiac49</div>
             </div>
         </div>
         <div class="post">
@@ -225,7 +224,7 @@
                 <figure class="post__user--profile-img-wrapper">
                     <img class="post__user--profile-img" src="./assets/Anime Profile Example.webp" alt="">
                 </figure>
-                <div class="post__username">DevinciCardiac49</div>
+                <div class="nope post__username">DevinciCardiac49</div>
             </div>
         </div>
         <button class="post__more btn">Read More</button>

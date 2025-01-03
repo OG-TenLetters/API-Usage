@@ -20,6 +20,7 @@ body {
 }
 
 
+
 .banner1 {
     position: fixed;
     width: 20%;
@@ -73,7 +74,7 @@ a {
 }
 
 button .share__label {
-    cursor: pointer;
+    cursor: not-allowed;
 }
 
 button {
@@ -127,6 +128,10 @@ button:hover:active {
     width: 100%;
 }
 
+.nope {
+    cursor: not-allowed;
+}
+
 /*
 
 NAVIGATION
@@ -161,14 +166,31 @@ nav {
     transition: color 300ms ease;
 }
 
-.fa-moon {
-    transition: animation 150ms ease; 
+.fa-moon,
+.fa-sun {
     transition: color 300ms ease;
+    animation:
+    /* eight-trigrams-sixty-four-palms 150ms linear 1,  */
+    wiggle 3s linear infinite;
+    /* transform: rotate(15deg); */
 }
-.fa-moon:hover {
-    transform: rotate(15deg);
-    animation: wiggle 500ms linear 3;
+.fa-moon:hover,
+.fa-sun:hover {
+    animation: none;
 }
+
+
+
+
+@keyframes eight-trigrams-sixty-four-palms {
+    0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}
+
 
 @keyframes wiggle {
     0% { transform: rotate(0deg); }
@@ -203,6 +225,7 @@ HEADER
     top: 0;
     right: 0;
     z-index: 5;
+    /* display: flex; */
 }
 
 .header__img--cover {
@@ -223,8 +246,8 @@ HEADER
 }
 
 .personal__logo-img {
-    height: 44px;
-    width: 48px;
+    height: 60px;
+    width: 60px;
     transform: scale(1.1), translateY(8px);
 
     filter: grayscale(0.8);
@@ -235,7 +258,6 @@ HEADER
     position: relative;
     overflow: hidden;
     display: flex;
-    background-color: rgb(224, 147, 147);
     padding: 52px 72px;
     border-radius: 40px;
     box-shadow: 0 12px 24px;
@@ -457,7 +479,7 @@ PAGE BODY
 }
 
 .post {
-    background-color: #a7b5e059;
+    background-color: #b1c0ed91;
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 8px;
@@ -585,13 +607,16 @@ footer {
 }
 
 .footer__container {
-    padding: 60px 0;
+    padding-top: 100px;
+    padding-bottom: 20px;
 }
 
 .footer__row {
     display: flex;
     justify-content: center;
 }
+
+
 
 /*
 
@@ -631,20 +656,18 @@ DARK THEME
     background-color: #fff;
 }
 .dark-theme .header__img--cover {
-    background-image: linear-gradient(to right, #756fc4 43%, #554deba2 75%, #554deb38);;
+    background-image: linear-gradient(to right, #393392 43%, #3e38b177 75%, #2b259752);;
 }
 .dark-theme 
 .dark-theme .site__title--wrapper,
-.dark-theme .header__title,
 .dark-theme .search__btn,
-.dark-theme .header__para,
 .dark-theme .header__btn {
     color: #000000;
 }
 
 .dark-theme .search__btn,
 .dark-theme .header__btns {
-    background-color: #6f80f3fa;
+    background-color: #7648c0c7;
 } 
 
 .dark-theme .icon__border {
@@ -656,11 +679,11 @@ DARK THEME
 }
 
 .dark-theme .search-box {
-    background-color: #9696a78c;
+    background-color: #d8d8d8e0;
 }
 
 .dark-theme .search-box::placeholder {
-    color: #cecece;
+    color: #5c5959;
 }
 
 .dark-theme .whole__body {
@@ -677,8 +700,347 @@ DARK THEME
 }
 
 
+@media (max-width: 1024px) {
+    .nav__link {
+        font-size: 16px;
+    }
+   
+   
+    .header__info {
+        max-height: 400px;
+        min-height: 400px;
+        padding: 36px 52px;
+    }
+    .header__img {
+        max-height: 400px;
+        min-height: 100%;
+    }
+
+    .personal__logo-img {
+        height: 44px;
+        width: 48px;
+    }
+
+    .header__title {
+        font-size: 32px;
+    }
+
+    .search-box {
+        height: 48px;        
+    }
+    .search__btn {
+        font-size: 16px;
+        padding: 8px 16px;
+        margin-left: 8px;
+    }
+
+    .header__btns {
+        padding: 12px 28px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .header__para {
+        font-size: 16px;
+    }
+
+    .icon__border {
+        padding: 1px 3px;
+        margin-left: 20px;
+    }
+
+    .share__btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .share__label {
+        margin-left: 8px;
+    }
+
+    .body__title,
+    .posts__title {
+        font-size: 24px;
+        margin: 12px 0;
+    }
+    .body__para,
+    .body__list-item {
+        font-size: 16px;
+    }
+    .body__details {
+        font-size: 20px;
+    }
+
+    .post {
+        padding: 16px;
+    }
+
+    .post__info-1,
+    .post__comment--count,
+    .post__para {
+        font-size: 12px;
+    }
+    .post__tag {
+        margin-right: 8px;
+    }
+    .post__title {
+        font-size: 18px;
+    }
+
+    .post__more  {
+        margin-top: 12px;
+        padding: 4px 0;
+        font-size: 16px;
+    }
+    .post__user--profile-img {
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+    .post__username {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 768px) {
+    
+    .nav__link {
+        padding: 0 8px;
+    }
+    
+    .header__row {
+        padding: 0 40px;
+    }
+    .header__content {
+        width: 100%;
+    }
+
+    .header__img--cover {
+        background-image: linear-gradient(to right, #252347f6 20%, #3f3a3aa2 75%, #322d4b38 ) ;
+    }
+    .dark-theme .header__img--cover {
+        background-image: linear-gradient(to right, #393392fa 20%, #3e38b1a2 75%, #2b259752);;
+    }
+
+    .search-box {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .header__btns {
+        font-size: 16px;
+    }
+    .row {
+        padding: 0 72px;
+    }
+    .body__container {
+        flex-direction: column;
+    }
+    .body__description {
+        padding: 20px;
+        width: 100%;
+    }
+    .body__posts {
+        padding: 24px 0;
+        padding-bottom: 4px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .post {
+        margin-bottom: 12px;
+    }
+
+    .post__more {
+        width: 100%;
+        padding: 12px 0;
+    }
 
 
+    .footer__row {
+        font-size: 12px;
+        padding: 12px 0;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .nav__link {
+        font-size: 12px;
+    }
+
+    .header__info {
+        min-height: 300px;
+    }
+
+    .link__hover-effect:after {
+        height: 2px;
+
+    }
 
 
+    .search-box {
+        height: 36px;
+        font-size: 16px;
+    }
 
+
+    .header__para {
+        font-size: 12px;
+    }
+
+    .header__btns {
+        font-size: 12px;
+    }
+
+    .icon__border .fa-arrow-right {
+        padding: 2px 1px;
+        font-size: 12px;
+    }
+
+    .share__text {
+        font-size: 16px;
+    }
+
+    .share__btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    .share__label {
+        font-weight: 560;
+
+    }
+}
+
+
+@media (max-width: 580px) {
+    .link__drop {
+        display: none;
+    }
+
+    .nav__link {
+        font-size: 16px;
+        padding: 0 16px;
+    }
+
+    .header__img {
+        max-height: 300px;
+    }
+    .header__row {
+        padding: 0 16px;
+    } 
+
+    .row {
+        padding: 0 28px;
+    }
+
+    .header__btns {
+        display: none;
+    }
+
+    .share__container {
+        flex-direction: column;
+    }
+
+    .share__text {
+        margin-bottom: 12px;
+    }
+    .share__container br {
+        display: none;
+    }
+
+    .body__title {
+        font-size: 20px;
+    }
+    .body__details {
+        font-size: 16px;
+    }
+    .body__para,
+    .body__list-item  {
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: .02em;
+    }
+
+
+}
+
+
+@media (max-width: 420px) {
+
+    
+    .nav__link {
+        font-size: 12px;
+    }
+
+    .header__row {
+        padding: 0 12px;
+    }
+
+    .header__info {
+        padding: 20px 36px;
+    }
+    
+    .header__info,
+    .header__img {
+        min-height: 200px;
+    }
+    .header__para {
+        max-height: 120px;
+        margin-bottom: 20px;
+        overflow-y: hidden;
+    }
+
+    .header__title {
+        font-size: 24px;
+        margin-left: 4px;
+    }
+
+    .personal__logo-img {
+        height: 32px;
+        width: 32px;
+    }
+
+    .search-box {
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .search__btn {
+        font-size: 8px;
+    }
+
+    .share__container {
+        padding: 0;
+    }
+    .body__description {
+        padding: 20px 0; 
+    }
+    .body__posts {
+        justify-content: center;
+    }
+
+    .post__more {
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+    .nav__link {
+        padding: 0 8px;
+    }
+
+    .header__info,
+    .header__img {
+        max-height: 220px;
+    }
+
+    .row {
+        padding: 0 16px;
+    }
+
+}
