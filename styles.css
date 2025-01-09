@@ -478,6 +478,10 @@ SHARE BOX
     font-weight: 700;
 }
 
+.share__btn--discord {
+    background-color: #5865f2;
+}
+
 .share__btn--lnkdn {
     background-color: #0a66c2;
 }
@@ -1132,12 +1136,14 @@ DARK THEME
 
 .social__links {
     display: flex;
-    font-size: 16px;
+    font-size: 12px;
     align-items: center;
+    color: white;
 
 }
 
 .social__links .icon__border {
+    padding: 4px 6px;
     margin-left: 4px;
 }
 
@@ -1197,4 +1203,76 @@ DARK THEME
     color: #000;
     font-weight: 700;
     transition: background-color 300ms ease;
+}
+
+/*
+
+CONTENTS
+
+*/
+
+.contents__container {
+    padding: 40px 0;
+}
+
+.contents__row {
+    padding: 0 20px;
+    background-color: #2523473d;
+    display: flex;
+}
+
+.contents__title {
+    font-size: 28px;
+    font-weight: 700;
+    padding: 12px 0;
+}
+
+.contents__box {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.contents__first-4 {
+    display: flex;
+}
+
+.contents {
+    display: flex;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    padding: 8px 4px;
+}
+.content__img {
+    width: 100%;
+}
+
+.content__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    /* width: 160px; */
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.content__title {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 0 0 8px 8px;
+    background-color: #2523473d;
+}
+
+.content__top-10 {
+    width: 25%;
 }
