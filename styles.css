@@ -1287,11 +1287,13 @@ CONTENTS
 
 .content__description {
     position: absolute;
+    color: white;
     top: 50%;
     left: 40px;
     transform: translateY(100%);
     font-size: 12px;
-    opacity: 1;
+    opacity: 0;
+    transition: all 450ms ease;
 }
 
 .content:hover .content__description {
