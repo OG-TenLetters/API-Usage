@@ -58,6 +58,11 @@ h3 {
     font-size: 24px;
 }
 
+
+li {
+    list-style-type: none;
+}
+
 p,
 li {
     font-size: 20px;
@@ -85,6 +90,7 @@ button {
     box-shadow: 0px 4px 12px #050b4183;
     transition: background-color 150ms ease, box-shadow 50ms ease;
 }
+
 
 button:hover {
     background-color: #2a3aa8da;
@@ -137,6 +143,69 @@ figure {
 
 .nope {
     cursor: not-allowed;
+}
+
+
+/*
+
+Hamburger Menu
+
+*/
+
+
+.btn__menu {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.btn__menu:hover {
+    background-color: transparent;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #4e4e4ef6;
+    top: 0;
+    left: 0;
+    right: 80%;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    border-radius: 0 12px ;
+    justify-content: center;
+    align-items: start;
+}
+
+.btn__menu--close {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    padding: 8px;
+    color: white;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 52px;
+
+}
+
+.menu__links {
+    padding: 8px 0;
+}
+
+.menu__link {
+    color: white;
+}
+
+.menu__style {
+    z-index: 101;
+}
+
+.menu__line {
+    background-color: #252347;
+    
 }
 
 /*
@@ -1286,20 +1355,19 @@ CONTENTS
     
 }
 
-.content2 {
-    box-shadow: 0px 0px 32px 12px #1b263b5d;
-}
+
 
 .content__img--wrapper {
     overflow: hidden;
+    height: 100%;
     transition: all 300ms ease;
 }
 
 .content__img {
     width: 100%;
-    transform: scale(1.2);
-    height: 250px;
-    /* min-height: 264px; */
+    height: 100%;
+    transform: scale(1.1);
+    object-fit: cover;
 }
 
 .content__wrapper:hover .content__img--wrapper {
@@ -1313,6 +1381,12 @@ CONTENTS
     border-radius: 20px 20px 0 0;
     box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
     overflow: hidden;
+    height: 100%;
+    max-height: 240px;
+}
+
+.content2 .content__wrapper {
+    max-height: 180px;
 }
 
 .content__wrapper--bg {
@@ -1339,6 +1413,14 @@ CONTENTS
     font-size: 12px;
     opacity: 0;
     transition: all 450ms ease 450ms;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.content2 .content__description {
+    -webkit-line-clamp: 8;
 }
 
 
@@ -1354,14 +1436,14 @@ CONTENTS
 
 
 .content__title {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     padding: 4px 8px;
     border-radius: 0 0 8px 8px;
     background-color: #b1c0ed;
     text-align: center;
     letter-spacing: 0.04em;
-    max-height: 48px;
+    max-height: 42px;
     transition: color 300ms ease, background-color 300ms ease;
     overflow: hidden;
 }
@@ -1374,6 +1456,7 @@ CONTENTS
 .content__title .content__title-text {
     transition: transform 2s ease;
 }
+
 
 .content:hover .content__title,
 .content2:hover .content__title,
@@ -1388,6 +1471,7 @@ CONTENTS
 .dark-theme .content2:hover .content__title,
 .dark-theme .content__title:hover {
     background-color: #875af1;
+    color: #fffba7;
 }
 
 
@@ -1431,7 +1515,6 @@ CONTENT RANKING
 }
 
 .content__rank--wrapper {
-    max-height: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1440,11 +1523,11 @@ CONTENT RANKING
 
 
 .content__rank--img {
-    width: 100%;  
-    max-height: 72px; 
+    width: 100%;
+    width: 100%;
+    transform: scale(1.4);
+    object-fit: cover; 
     filter: brightness(.6);
-    overflow: hidden;
-    border-radius: 12px;
     box-shadow: 0px 12px 12px 0px #5d7ce2b0;
 }
 
@@ -1455,6 +1538,10 @@ CONTENT RANKING
 
 .content__rank--img--wrapper {
     position: relative;
+    max-width: 52px;
+    max-height: 52px;
+    border-radius: 12px;
+    overflow: hidden;
     width: 25%;
 
 }
@@ -1479,11 +1566,11 @@ CONTENT RANKING
     align-items: center;
     width: 75%;
     background-color: #ac8ae4;
-    padding: 16px 12px;
+    padding: 8px 4px;
     border-radius: 0 8px 8px 0;
     /* border: rgb(75, 16, 102) solid 1px; */
     box-shadow: 4px 4px 8px 4px #5d6ae27e;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     overflow: hidden;
     white-space: nowrap;
@@ -1512,13 +1599,16 @@ CONTENT RANKING
 }
 
 .content2 {
-    margin: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 6px;
+    box-shadow: 0px 0px 32px 12px #1b263b5d;
     flex-basis: calc(100% / 6);
 }
 
 .content2 .content__title-text {
-    font-size: 12px;
-    max-height: 32px;
+    font-size: 10px;
+    max-height: 30px;
 }
 
 .dark-theme .content__title,
@@ -1545,4 +1635,5 @@ CONTENT RANKING
 
 .footer2 {
     border-radius: 16px 16px 0 0;
+    text-align: center;
 }
