@@ -10,6 +10,17 @@
       crossorigin="anonymous"
     ></script>
     <script src="index.js" defer></script>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "qVGgK80-uMkkItvbU",
+      });
+    })();
+  </script>
   </head>
   <body>
     <div class="banner__cover"></div>
@@ -24,7 +35,7 @@
           <a href="" class="nav__link link__hover-effect link__drop">Shows</a>
           <a href="" class="nav__link link__hover-effect">Featured</a>
           <a href="" class="nav__link link__hover-effect">Personal List</a>
-          <a href="" class="nav__link link__drop nav__link--primary link__hover-effect"
+          <a class="nav__link link__drop nav__link--primary link__hover-effect" onclick="toggleModal()"
             >Contact</a
           >
           <div class="nav__link"
@@ -67,6 +78,129 @@
           </div>
         </div>
     </header>
+    <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            Here's where I'm currently at:
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Engineer.
+          </h4>
+          <p class="modal__para">
+            I'm a 23 year old
+            <b class="chosen-color">frontend software engineer</b> with a strong
+            passion of developing and constantly improving websites. <br />
+            The goal being maintaining the
+            <b class="chosen-color">user experience</b> whilst keeping the site,
+            clean, light, and engaging. <br />
+            I've tackled problems through different avenues of my life, from
+            robotics, art, multi-insurance, to aviation maintenance and I'm
+            excited to <b class="chosen-color"> incorporate </b>
+            my skills to website development.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt="Html Logo"
+                class="modal__language--img"
+              />
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                alt="CSS Logo"
+                class="modal__language--img"
+              />
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                alt="JavaScript Logo"
+                class="modal__language--img"
+              />
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png"
+                alt="TypeScript Logo"
+                class="modal__language--img"
+              />
+              <span class="language__name">TypeScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/sql-database-generic.svg"
+                alt="Html Logo"
+                class="modal__language--img SQL-fix"
+              />
+              <span class="language__name">SQL</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                alt="React Logo"
+                class="modal__language--img React-fix"
+              />
+              <span class="language__name">React</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/redux.svg"
+                alt="Html Logo"
+                class="modal__language--img"
+              />
+              <span class="language__name">Redux</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="./assets/Logomark_Full Color.svg"
+                alt="Html Logo"
+                class="modal__language--img"
+              />
+              <span class="language__name">Firebase</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+          <h3 class="modal__sub-title modal__sub-title--contact">
+            Im currently open to new opportunities.
+          </h3>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea
+                class="input"
+                name="message"
+                type="text"
+                required
+              ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send it my way
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking to you soon.
+          </div>
+        </div>
+      </div>
 </section>
 
     <!-- BODY  -->
