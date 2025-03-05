@@ -22,7 +22,13 @@
     })();
   </script>
   </head>
-  <body>
+  <body class="main-body">
+    <div class="banner__cover"></div>
+    <img class="banner1" src="./assets/CompleteBanner.svg">
+    <img class="banner3" src="./assets/CompleteBanner.svg">
+    <img class="banner2" src="./assets/CompleteBanner.svg">
+    <img class="banner4" src="./assets/CompleteBanner.svg">
+    <img class="banner5" src="./assets/CompleteBanner.svg">
     <nav class="nav2">
       <div class="nav__links">
         <button class="btn__menu" onclick="openMenu()"><i class="fa-solid fa-burger"></i></button>
@@ -32,6 +38,9 @@
           </button>
           <div class="menu__styling">
           <ul class="menu__list">
+            <li class="menu__links">
+              <a href="" class="menu__link link__hover-effect menu__login" onclick="closeMenu()">Login</a>
+            </li>
             <li class="menu__links">
               <a href="#" class="menu__link link__hover-effect" onclick="closeMenu()">Home</a>
             </li>
@@ -57,7 +66,7 @@
             </li>
             <div class="menu__line"></div>
             <li class="menu__links">
-              <a href="" class="menu__link link__hover-effect" onclick="closeMenu()" onclick="toggleModal()" >Contact</a>
+              <a class="menu__link link__hover-effect" onclick="closeMenu(), toggleModal()" >Contact</a>
             </li>
             <div class="menu__line"></div>
           </ul>
@@ -80,7 +89,7 @@
             <i
               class="fa-solid fa-magnifying-glass btn search__btn--click clickable"
             ></i>
-            <button class="search__btn--filter">Filter</button>
+            <button class="search__btn--filter"><div class="filter__word">Filter</div><i class="filter__icon fa-solid fa-filter"></i></button>
           </div>
         </div>
         <div class="nav__link2 social__links nope">

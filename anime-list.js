@@ -1,4 +1,18 @@
 let isModalOpen = false;
+let lastScrollY = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  const navbar = document.querySelector('.nav2')
+
+  if (currentScrollY > lastScrollY) {
+    navbar.classList.add('hidden');
+  } else {
+    navbar.classList.remove('hidden');
+  }
+
+  lastScrollY = currentScrollY;
+});
 
 function openMenu() {
     document.body.classList += " menu--open"
