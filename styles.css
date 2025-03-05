@@ -257,6 +257,7 @@ Hamburger Menu
   bottom: 0;
   z-index: 100;
   display: flex;
+  height: 100vh;
   border-radius: 0 12px 12px 0;
   justify-content: center;
   align-items: start;
@@ -275,9 +276,7 @@ Hamburger Menu
   box-shadow: 0px 0px 32px 24px #7890c1c2;
   top: 3%;
   bottom: 3%;
-  /* padding: 0px 16px; */
   z-index: 101;
-  /* border: double 4px #302d2dcc; */
 }
 
 .dark-theme .menu__backdrop {
@@ -567,7 +566,7 @@ HEADER
   transition: background-color 300ms ease;
 }
 
-.main-body .filter__icon {
+.filter__icon {
     display: none;
 }
 
@@ -1772,7 +1771,7 @@ CONTENT RANKING
     margin-left: 8px;
   }
 
-  .main-body .site__title2 {
+  .site__title2 {
     font-size: 20px;
   }
 
@@ -1843,7 +1842,7 @@ CONTENT RANKING
     font-size: 14px;
   }
 
-  .main-body .content__title {
+  .content__title {
     font-size: 10px;
     max-height: 36px;
   }
@@ -1860,9 +1859,9 @@ CONTENT RANKING
     max-height: 29px;
   }
 
-  .main-body .languages__container,
-  .main-body .communitylink__container,
-  .main-body .theme__container {
+ .languages__container,
+ .communitylink__container,
+ .theme__container {
     font-size: 10px;
   }
 }
@@ -1874,11 +1873,11 @@ CONTENT RANKING
 
 
 
-  .main-body .login__btn {
+  .login__btn {
     display: none;
   }
 
-  .main-body .menu__login {
+  .menu__login {
     display: block;
     padding-top: 28px;
   }
@@ -2064,7 +2063,7 @@ CONTENT RANKING
     padding: 0 4px;
   }
 
-  .main-body .site__title2 {
+  .site__title2 {
     font-size: 16px;
   }
 
@@ -2073,9 +2072,9 @@ CONTENT RANKING
     width: 16px;
   }
 
-  .main-body .languages__container,
-  .main-body .communitylink__container,
-  .main-body .theme__container {
+  .languages__container,
+  .communitylink__container,
+  .theme__container {
     font-size: 8px;
   }
 
@@ -2146,7 +2145,7 @@ CONTENT RANKING
     margin: 4px;
   }
 
-  .main-body .content__title {
+  .content__title {
     font-size: 8px;
   }
 }
@@ -2169,7 +2168,7 @@ CONTENT RANKING
     display: none;
 }
 
-.filter__icon {
+ .filter__icon {
       font-size: 8px;
     display: block;
   }
@@ -2253,7 +2252,7 @@ CONTENT RANKING
     font-size: 8px;
   }
 
-  .main-body .site__title2 {
+  .site__title2 {
     font-size: 12px;
   }
 
