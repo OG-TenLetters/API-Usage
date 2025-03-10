@@ -251,7 +251,7 @@ Hamburger Menu
 
 .menu__backdrop {
   position: fixed ;
-  background-color: #6d7acacc;
+  background-color: #384491cc;
   top: 0;
   left: 0;
   bottom: 0;
@@ -265,15 +265,15 @@ Hamburger Menu
   visibility: hidden;
   transition: all 300ms ease;
   transform: translateX(-100%);
-  border: solid 1px #302d2dcc;
+  border: solid 1px #384491cc;
 }
 
 .menu__styling {
   display: flex;
   position: fixed;
-  background-color: #7890c1c2;
+  background-color: #89a9e9c2;
   border-radius: 0 8px 8px 0;
-  box-shadow: 0px 0px 32px 24px #7890c1c2;
+  box-shadow: 0px 0px 32px 24px #8fb0f1c2;
   top: 3%;
   bottom: 3%;
   z-index: 101;
@@ -371,7 +371,7 @@ NAVIGATION
   background-color: #6073eeda;
   border-radius: 0 0 8px 8px;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   box-shadow: 0 8px 24px #1a2042da;
   z-index: 5;
   transition: background-color 300ms ease;
@@ -407,6 +407,11 @@ NAVIGATION
   font-weight: 500;
   color: black;
   transition: color 300ms ease;
+}
+
+.nav__link .fa-moon,
+.nav__link .fa-sun {
+  font-size: 20px;
 }
 
 .nav__link2 {
@@ -697,7 +702,7 @@ MODAL
 }
 
 .main-body .modal {
-  top: 40%;
+  top: 33%;
 }
 
 .modal__half {
@@ -722,7 +727,7 @@ MODAL
 }
 
 .dark-theme .modal__about {
-  background-color: #352258;
+  background-color: #593e8b;
 }
 
 .dark-theme .modal__para {
@@ -1449,12 +1454,10 @@ CONTENTS
   box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
   overflow: hidden;
   height: 100%;
-  max-height: 240px;
+  /* max-height: 240px; */
 }
 
-.content2 .content__wrapper {
-  max-height: 180px;
-}
+
 
 .content__wrapper--bg {
   position: absolute;
@@ -1701,6 +1704,26 @@ CONTENT RANKING
 @MEDIA
 
 */
+
+
+/* @media (max-width: 1980px) {
+  .content__title,
+    .content2 .content__title-text {
+      font-size: 16px;
+      max-height: 48px;
+  }
+  
+}
+
+
+
+@media (max-width: 1400px) {
+  .content__title,
+  .content2 .content__title-text {
+    font-size: 12px;
+  }
+} */
+
 
 @media (max-width: 1200px) {
    
@@ -1965,6 +1988,15 @@ CONTENT RANKING
     padding: 16px;
   }
 
+  .content,
+  .content2 {
+    border-radius: 12px 12px 8px 8px;
+  }
+
+  .content__wrapper {
+    border-radius: 12px 12px 0 0;
+  }
+
   .content-remains {
     padding: 32px 16px;
   }
@@ -1996,7 +2028,10 @@ CONTENT RANKING
     font-size: 8px;
   }
 
-
+.content__title {
+  font-size: 8px;
+  max-height: 28px;
+}
 
 
 }
@@ -2050,6 +2085,34 @@ CONTENT RANKING
   .share__label {
     font-weight: 560;
   }
+
+  .content .content__title {
+    max-height: 20px;
+    padding: 2px;
+  }
+  
+  .content2 .content__title-text {
+    max-height: 18px;
+  }
+
+  .content2 .content__title {
+    padding: 2px 2px;
+  }
+  
+  .content .content__title,
+  .content2 .content__title-text {
+    font-size: 6px;
+  }
+
+
+  .content__title--top-10,
+  .content__rank {
+    font-size: 20px;
+  }
+
+  .content__rank--title {
+    font-size: 8px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -2081,7 +2144,6 @@ CONTENT RANKING
   .language {
     padding: 0 4px;
   }
-
   .language__tag {
     min-width: 52px;
   }
@@ -2148,12 +2210,52 @@ CONTENT RANKING
   .content__title {
     font-size: 8px;
   }
+
+  .content-remains {
+    padding: 0;
+  }
+
+  .content2 {
+    max-height: 116px;
+    max-width: 60px;
+  }
+
+  .content__rank--title {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .content2 {
+    flex-basis: (100%/4);
+  }
+}
+
 
 @media (max-width: 420px) {
   .nav__link {
     font-size: 12px;
   }
+
+
+
+
+
+
+
+
+
 
   .menu--open .menu__backdrop {
     right: 55%;
@@ -2236,6 +2338,18 @@ CONTENT RANKING
     padding: 8px 0;
     font-size: 12px;
   }
+
+  .content__title--top-10,
+  .content__rank {
+    font-size: 16px;
+  }
+
+  .content__rank--title {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 4px;
+  }
+
 }
 
 @media (max-width: 360px) {
