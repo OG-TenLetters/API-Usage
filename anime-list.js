@@ -15,27 +15,28 @@ main();
 
 function showAnimeContent(id) {
   localStorage.setItem("id", id);
-  window.location.href = `${window.location.origin}/user.html`;
+  window.location.href = `${window.location.origin}/anime-list.html`;
 }
 
 function animeHTML(data) {
-  return `      
-    <div class="content__rank--wrapper" (${data.id})>
-      <figure class="content__rank--img--wrapper">
-        <img
-          src="${data.images.webp.image_url}"
-          class="content__rank--img"
-        />
-        <div class="content__rank">1</div>
-      </figure>
-      <div class="content__rank--title">
-        <div class="content__rank--title-text">
-          The Aristocrat's Otherworldly Adventure
-        </div>
-      </div>
-      </div>
+  return `<div class="content__rank--wrapper" (${data.id})>
+            <figure class="content__rank--img--wrapper">
+              <img
+                src="${data.images.webp.image_url}"
+                class="content__rank--img"
+              />
+              <div class="content__rank">1</div>
+            </figure>
+            <div class="content__rank--title">
+              <div class="content__rank--title-text">
+                The Aristocrat's Otherworldly Adventure
+              </div>
+            </div>
+          </div>
   `;
 }
+
+console.log(animeHTML)
 
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
