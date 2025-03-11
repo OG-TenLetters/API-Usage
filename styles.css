@@ -1419,6 +1419,7 @@ CONTENTS
 .content {
   display: flex;
   flex-direction: column;
+  flex-basis: calc(100%/4);
   justify-content: center;
   max-width: 240px;
   margin: 8px 4px;

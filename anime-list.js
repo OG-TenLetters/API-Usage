@@ -26,7 +26,7 @@ function animeRankHTML(data, index) {
       </figure>
       <div class="content__rank--title">
         <div class="content__rank--title-text">
-        ${data.title}
+        ${data.title_english || data.title}
         </div>
       </div>
     </div>
@@ -52,8 +52,7 @@ animeMain();
 
 function animeHTML1(data) {
   return `
-            <div class="contents__first-4">
-              <div class="contents">
+
                 <div class="content">
                   <div class="content__wrapper">
                     <figure class="content__img--wrapper">
@@ -70,12 +69,10 @@ function animeHTML1(data) {
                   </div>
                   <div class="content__title">
                     <div class="content__title-text">
-                      ${data.title}
+                    ${data.title_english || data.title}
                     </div>
                   </div>
                 </div>
-              </div>              
-            </div>              
   `
 }
 
@@ -99,7 +96,7 @@ function animeHTML2(data) {
                 </div>
                 <div class="content__title">
                   <div class="content__title-text">
-                    ${data.title}
+                  ${data.title_english || data.title}
                   </div>
                 </div>
               </div>
