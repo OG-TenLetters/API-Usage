@@ -42,71 +42,39 @@ async function animeMain() {
   const animePortal = await anime.json();
   const animeData1 = animePortal.data.slice(0, 4);
   const animeData2 = animePortal.data.slice(5, 25)
-  console.log(animeData1);
-  console.log(animeData2);
-  animeHTMLEl1.innerHTML = animeData1.map((data) => animeHTML1(data)).join("");
-  animeHTMLEl2.innerHTML = animeData2.map((data) => animeHTML2(data)).join("");
-  // console.log(animeHTMLEl1)
+  animeHTMLEl1.innerHTML = animeData1.map((data) => animeHTML(data)).join("");
+  animeHTMLEl2.innerHTML = animeData2.map((data) => animeHTML(data)).join("");
+
+  console.log(animeHTMLEl2)
 }
+
+function animeHTML(data) {
+  return `
+  
+  <div class="content">
+  <div class="content__wrapper">
+  <figure class="content__img--wrapper">
+  <img
+  class="content__img"
+  src= ${data.images.webp.image_url}
+  alt=""
+  />
+  </figure>
+  <div class="content__wrapper--bg"></div>
+  <p class="content__description">
+  ${data.synopsis}
+  </p>
+  </div>
+  <div class="content__title">
+  <div class="content__title-text">
+  ${data.title_english || data.title}
+  </div>
+  </div>
+  </div>
+  `
+}
+
 animeMain();
-
-function animeHTML1(data) {
-  return `
-
-                <div class="content">
-                  <div class="content__wrapper">
-                    <figure class="content__img--wrapper">
-                      <img
-                        class="content__img"
-                        src= ${data.images.webp.image_url}
-                        alt=""
-                      />
-                    </figure>
-                    <div class="content__wrapper--bg"></div>
-                    <p class="content__description">
-                      ${data.synopsis}
-                    </p>
-                  </div>
-                  <div class="content__title">
-                    <div class="content__title-text">
-                    ${data.title_english || data.title}
-                    </div>
-                  </div>
-                </div>
-  `
-}
-
-// console.log(animeHTML1)
-
-function animeHTML2(data) {
-  return `
-              <div class="content2">
-                <div class="content__wrapper">
-                  <figure class="content__img--wrapper">
-                    <img
-                      class="content__img"
-                      src= ${data.images.webp.image_url}
-                      alt=""
-                    />
-                  </figure>
-                  <div class="content__wrapper--bg"></div>
-                  <p class="content__description">
-                    ${data.synopsis}
-                  </p>
-                </div>
-                <div class="content__title">
-                  <div class="content__title-text">
-                  ${data.title_english || data.title}
-                  </div>
-                </div>
-              </div>
-              
-  `
-}
-
-
-
-
 
 
 function showAnimeContent(id) {
