@@ -1,56 +1,30 @@
 // Main Anime API: https://api.jikan.moe/v4/anime
 // Top 10 API: https://api.jikan.moe/v4/top/anime
+
+const animeRankHTMLEl = document.querySelector(".contents__rank-box");
+const animeHTMLEl1 = document.querySelector(".contents__first-4");
+const animeHTMLEl2 = document.querySelector(".content-remains");
+
 let isModalOpen = false;
 let lastScrollY = 0;
-const animeRankHTMLEl = document.querySelector(".contents__rank-box");
 
-async function animeRankMain() {
-  const animeRank = await fetch(`https://api.jikan.moe/v4/top/anime`);
-  const animeRankPortal = await animeRank.json();
-  const animeRankData = animeRankPortal.data.slice(0, 10);
-  // console.log(animeRankData);
-  animeRankHTMLEl.innerHTML = animeRankData.map((data, index) => animeRankHTML(data, index)).join("");
-  // console.log(animeRankHTMLEl)
-}
-animeRankMain();
-function animeRankHTML(data, index) {
-  return `
-  <div class="content__rank-box" ${data.id}>
-    <div class="content__rank--wrapper">
-      <figure class="content__rank--img--wrapper">
-        <img
-        src="${data.images.webp.image_url}"
-        class="content__rank--img"
-        />
-        <div class="content__rank">${index + 1}</div>
-      </figure>
-      <div class="content__rank--title">
-        <div class="content__rank--title-text">
-        ${data.title_english || data.title}
-        </div>
-      </div>
-    </div>
-  </div>
-  `;
+function onSearchChange(event) {
+  console.log(event.target.value)
+
 }
 
-const animeHTMLEl1 = document.querySelector(".contents__first-4")
-const animeHTMLEl2 = document.querySelector(".content-remains")
 
 async function animeMain() {
   const anime = await fetch(`https://api.jikan.moe/v4/anime`);
   const animePortal = await anime.json();
   const animeData1 = animePortal.data.slice(0, 4);
-  const animeData2 = animePortal.data.slice(5, 25)
-  animeHTMLEl1.innerHTML = animeData1.map((data) => animeHTML(data)).join("");
-  animeHTMLEl2.innerHTML = animeData2.map((data) => animeHTML(data)).join("");
+  const animeData2 = animePortal.data.slice(5, 25);
+  const animeDataArrays = [animeData1, animeData2];
+  const animeElements = [animeHTMLEl1, animeHTMLEl2];
 
-  console.log(animeHTMLEl2)
-}
-
-function animeHTML(data) {
-  return `
-  
+  animeElements.forEach((elem, index) => {
+    elem.innerHTML = animeDataArrays[index].map((data) => 
+    ` 
   <div class="content">
   <div class="content__wrapper">
   <figure class="content__img--wrapper">
@@ -71,10 +45,42 @@ function animeHTML(data) {
   </div>
   </div>
   </div>
-  `
+  `).join("");
+  })
 }
-
 animeMain();
+
+
+
+
+async function animeRankMain() {
+  const animeRank = await fetch(`https://api.jikan.moe/v4/top/anime`);
+  const animeRankPortal = await animeRank.json();
+  const animeRankData = animeRankPortal.data.slice(0, 10);
+  // console.log(animeRankData);
+  animeRankHTMLEl.innerHTML = animeRankData
+    .map((data, index) => `
+  <div class="content__rank-box" ${data.id}>
+  <div class="content__rank--wrapper">
+  <figure class="content__rank--img--wrapper">
+  <img
+  src="${data.images.webp.image_url}"
+  class="content__rank--img"
+  />
+  <div class="content__rank">${index + 1}</div>
+  </figure>
+  <div class="content__rank--title">
+  <div class="content__rank--title-text">
+  ${data.title_english || data.title}
+  </div>
+  </div>
+  </div>
+  </div>
+  `).join("");
+}
+animeRankMain();
+
+
 
 
 function showAnimeContent(id) {
