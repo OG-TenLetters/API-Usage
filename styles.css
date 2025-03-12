@@ -7,6 +7,16 @@
   font-family: "Noto Sans Display", serif;
 }
 
+::selection {
+  background-color: rgb(112, 226, 255);
+  color: black; 
+}
+
+.dark-theme ::selection {
+  background-color: greenyellow;
+  color: black; 
+}
+
 html:root {
   scroll-behavior: smooth;
 }
@@ -305,8 +315,8 @@ Hamburger Menu
 
 .btn__menu--close {
   position: absolute;
-  left: 4px;
-  top: 4px;
+  left: 0px;
+  top: 15px;
   padding: 8px;
   color: #000000cc;
   z-index: 102;
@@ -381,6 +391,7 @@ NAVIGATION
 .nav2 {
   position: fixed;
   top: 0;
+  height: 72px;
   left: 50%;
   transform: translateX(-50%);
   padding: 8px;
@@ -588,7 +599,12 @@ HEADER
 .search-bar2 {
   border-radius: 4px;
   padding: 4px;
+  height: 36px;
   min-width: 240px;
+}
+
+.search-bar2:focus {
+  border: solid 4px yellow
 }
 
 .search-bar::placeholder {
@@ -1427,7 +1443,7 @@ CONTENTS
 .contents__first-4 .content {
   display: flex;
   flex-direction: column;
-  flex-basis: calc(100%/4);
+  flex-wrap: calc(100%/4);
   justify-content: center;
   max-width: 240px;
   margin: 8px 4px;
@@ -1675,7 +1691,7 @@ CONTENT RANKING
   flex-direction: column;
   margin: 8px 6px;
   box-shadow: 0px 0px 32px 12px #0825685d;
-  flex-basis: calc(100% / 6);
+  flex-wrap: calc(100% / 5);
 }
 
 .content-remains .content .content__title-text {
@@ -2035,9 +2051,15 @@ CONTENT RANKING
     padding: 12px 0;
   }
 
+
+  .contents__first-4 {
+    flex-wrap: wrap;
+  }
+
   .contents {
     padding: 16px;
   }
+
 
   .contents__first-4 .content,
   .content-remains .content {
@@ -2053,7 +2075,7 @@ CONTENT RANKING
   }
 
   .content-remains .content {
-    flex-basis: calc(100%/5);
+    flex-wrap: calc(100%/2);
   }
 
   .contents__title, 
@@ -2300,8 +2322,9 @@ CONTENT RANKING
 
 
 @media (max-width: 480px) {
-  .content-remains .content {
-    flex-basis: (100%/4);
+
+  .contents__first-4 {
+    flex-wrap: calc(100% / 2);
   }
 }
 

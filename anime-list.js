@@ -4,20 +4,17 @@
 const animeRankHTMLEl = document.querySelector(".contents__rank-box");
 const animeHTMLEl1 = document.querySelector(".contents__first-4");
 const animeHTMLEl2 = document.querySelector(".content-remains");
+// const theSpread = {search, anime, animePortal, animeData1, animeData2, animeDataArrays, animeElements}
+
+
+
 
 let isModalOpen = false;
 let lastScrollY = 0;
 
-// const searchInput = document.getElementById(".search-bar2");
-// const searchButton = document.getElementById(".search-clicks");
-// const searchResults = document.getElementById(".search-clicks");
-
-
-
 async function onSearchChange(event) {
-  console.log(event.target.value)
-  const title = event.target.value
-  const anime = await fetch(`https://api.jikan.moe/v4/anime`);
+  const search = event.target.value
+  const anime = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&sfw=true`);
   const animePortal = await anime.json();
   const animeData1 = animePortal.data.slice(0, 4);
   const animeData2 = animePortal.data.slice(5, 25);
@@ -26,7 +23,49 @@ async function onSearchChange(event) {
 
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
-    ` 
+      animeTemplateHTML(data)).join("");
+  })
+  
+}
+
+async function theSpread(event) { 
+  const search = event.target.value
+  const anime = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&sfw=true`);
+  const animePortal = await anime.json();
+  const animeData1 = animePortal.data.slice(0, 4);
+  const animeData2 = animePortal.data.slice(5, 25);
+  const animeDataArrays = [animeData1, animeData2];
+  const animeElements = [animeHTMLEl1, animeHTMLEl2];
+
+  if (anime == anime) {
+    
+  }
+
+  animeElements.forEach((elem, index) => {
+    elem.innerHTML = animeDataArrays[index].map((data) => 
+      animeTemplateHTML(data)).join(""); 
+  })
+}
+
+
+
+
+async function renderAnime() {
+  const anime = await fetch(`https://api.jikan.moe/v4/anime`);
+  const animePortal = await anime.json();
+  const animeData1 = animePortal.data.slice(0, 4);
+  const animeData2 = animePortal.data.slice(5, 25);
+  const animeDataArrays = [animeData1, animeData2];
+  const animeElements = [animeHTMLEl1, animeHTMLEl2];
+
+  animeElements.forEach((elem, index) => {
+    elem.innerHTML = animeDataArrays[index].map((data) => animeTemplateHTML(data)).join("");
+  })
+}
+renderAnime();
+
+function animeTemplateHTML(data) {
+  return` 
   <div class="content">
   <div class="content__wrapper">
   <figure class="content__img--wrapper">
@@ -47,52 +86,15 @@ async function onSearchChange(event) {
   </div>
   </div>
   </div>
-  `).join("");
-  })
-
+  `
 }
 
 
-async function animeMain() {
-  const anime = await fetch(`https://api.jikan.moe/v4/anime`);
-  const animePortal = await anime.json();
-  const animeData1 = animePortal.data.slice(0, 4);
-  const animeData2 = animePortal.data.slice(5, 25);
-  const animeDataArrays = [animeData1, animeData2];
-  const animeElements = [animeHTMLEl1, animeHTMLEl2];
-
-  animeElements.forEach((elem, index) => {
-    elem.innerHTML = animeDataArrays[index].map((data) => 
-    ` 
-  <div class="content">
-  <div class="content__wrapper">
-  <figure class="content__img--wrapper">
-  <img
-  class="content__img"
-  src= ${data.images.webp.image_url}
-  alt=""
-  />
-  </figure>
-  <div class="content__wrapper--bg"></div>
-  <p class="content__description">
-  ${data.synopsis}
-  </p>
-  </div>
-  <div class="content__title">
-  <div class="content__title-text">
-  ${data.title_english || data.title}
-  </div>
-  </div>
-  </div>
-  `).join("");
-  })
-}
-animeMain();
 
 
 
 
-async function animeRankMain() {
+async function renderAnimeRank() {
   const animeRank = await fetch(`https://api.jikan.moe/v4/top/anime`);
   const animeRankPortal = await animeRank.json();
   const animeRankData = animeRankPortal.data.slice(0, 10);
@@ -117,15 +119,15 @@ async function animeRankMain() {
   </div>
   `).join("");
 }
-animeRankMain();
+renderAnimeRank();
 
 
 
 
-function showAnimeContent(id) {
-  localStorage.setItem("id", id);
-  window.location.href = `${window.location.origin}/anime-list.html`;
-}
+// function showAnimeContent(id) {
+//   localStorage.setItem("id", id);
+//   window.location.href = `${window.location.origin}/anime-list.html`;
+// }
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
   const navbar = document.querySelector(".nav2");
