@@ -578,9 +578,6 @@ HEADER
   transition: background-color 300ms ease;
 }
 
-.filter__icon {
-    display: none;
-}
 
 .search-bar {
   max-width: 500px;
@@ -632,13 +629,32 @@ HEADER
 }
 
 .search__btn--filter {
+  position: relative;
   font-size: 12px;
   background-color: black;
-  padding: 0 4px;
+  padding: 12px 20px;
   height: 20px;
   border-radius: 4px;
   margin-right: 4px;
 }
+
+.filter__icon {
+  visibility: hidden;
+  opacity: 0;
+}
+.filter__word {
+  visibility: visible;
+  opacity: 1;
+}
+
+.filter__icon,
+.filter__word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 .header__para {
   padding: 12px 0;
@@ -1905,7 +1921,7 @@ CONTENT RANKING
   }
 
   .content-remains .content .content__title-text {
-    font-size: 8px;
+    font-size: 12px;
   }
 
   .content-remains .content .content__title {
@@ -2174,7 +2190,7 @@ CONTENT RANKING
   
   .contents__first-4 .content .content__title,
   .content-remains .content .content__title-text {
-    font-size: 6px;
+    font-size: 12px;
   }
 
 
@@ -2334,15 +2350,6 @@ CONTENT RANKING
     font-size: 12px;
   }
 
-
-
-
-
-
-
-
-
-
   .menu--open .menu__backdrop {
     right: 55%;
   }
@@ -2353,12 +2360,14 @@ CONTENT RANKING
   }
 
   .filter__word {
-    display: none;
+   visibility: hidden;
+   opacity: 0;
 }
 
  .filter__icon {
-      font-size: 8px;
-    display: block;
+    font-size: 8px;
+    visibility: visible;
+    opacity: 1;
   }
 
   .search__btn--click {
@@ -2408,6 +2417,7 @@ CONTENT RANKING
 
   .search__btn--filter {
     height: 18px;
+    padding: 8px;
   }
 
   .share__container {
@@ -2433,7 +2443,7 @@ CONTENT RANKING
   .content__rank--title {
     padding-top: 2px;
     padding-bottom: 2px;
-    font-size: 4px;
+    font-size: 8px;
   }
 
 }
