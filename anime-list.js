@@ -13,15 +13,15 @@ const getManga = document.querySelector("getManga")
 function renderMoviesToMain(event) {
       renderMovies(event)
 }
-
 const urlParams1 = new URLSearchParams(window.location.search);
 if (urlParams1.get('rendermovie') === 'true') {
   setTimeout(renderMoviesToMain, 500)
 }
+
+
 function renderMangaToMain(event) {
       renderManga(event)
 }
-
 const urlParams2 = new URLSearchParams(window.location.search);
 if (urlParams2.get('rendermanga') === 'true') {
   setTimeout(renderMangaToMain, 500)
@@ -34,14 +34,21 @@ let lastScrollY = 0;
 async function onSearchChange(event) {
   const search = event.target.value
   const anime = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&sfw=true`);
+  console.log(anime)
   const animePortal = await anime.json();
   const animeData1 = animePortal.data.slice(0, 4);
   const animeData2 = animePortal.data.slice(5, 25);
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
-  
-  contentsTitleEl1.innerHTML = "Results"
-  contentsTitleEl2.innerHTML = "Similar Results"
+  if (anime ==! undefined) {
+    contentsTitleEl1.innerHTML = "Results"
+    contentsTitleEl2.innerHTML = "Similar Results"
+  }
+  else {
+    contentsTitleEl1.innerHTML = "No Results"
+    contentsTitleEl2.innerHTML = ""
+  }
+
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join("");
@@ -68,6 +75,8 @@ async function renderMovies(event) {
   //   return console.log("Outstanding")
   // }
   contentsTitleEl1.innerHTML = "Moooovies"
+  contentsTitleEl2.innerHTML = "The Rest"
+
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join(""); 
@@ -85,6 +94,7 @@ async function renderManga(data) {
   //   return console.log("Outstanding")
   // }
   contentsTitleEl1.innerHTML = "Manga"
+  contentsTitleEl2.innerHTML = "The Rest"
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join(""); 

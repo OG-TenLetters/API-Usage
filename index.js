@@ -72,6 +72,10 @@ function toggleContrast() {
     }
 }
 
+
+
+
+
 changeIcon = (icon) => icon.classList.toggle('fa-sun')
 
 function toggleClass(fa) {

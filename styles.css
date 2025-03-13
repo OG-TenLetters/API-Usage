@@ -399,6 +399,10 @@ NAVIGATION
   transition: transform 300ms ease;
 }
 
+.nav1 .nav__link {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
 
 
 .nav__links {
@@ -948,7 +952,15 @@ MODAL
   padding: 20px;
 }
 
+.spinner__position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .fa-spinner {
+  font-size: 40px;
   animation: spinner 750ms infinite linear;
 }
 
@@ -1445,6 +1457,7 @@ CONTENTS
 .contents__first-4 {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 
@@ -1623,6 +1636,8 @@ CONTENT RANKING
 .contents__rank-box {
   padding: 8px 12px;
   padding-bottom: 28px;
+  position: relative;
+  
 }
 
 .content__rank-box {
@@ -1704,6 +1719,7 @@ CONTENT RANKING
 }
 
 .content-remains {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 40px 24px;
@@ -1749,6 +1765,19 @@ CONTENT RANKING
 .footer2 {
   border-radius: 16px 16px 0 0;
   text-align: center;
+}
+
+.fa-spinner {
+  animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*
