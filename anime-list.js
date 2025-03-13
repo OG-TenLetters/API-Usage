@@ -4,6 +4,10 @@
 const animeRankHTMLEl = document.querySelector(".contents__rank-box");
 const animeHTMLEl1 = document.querySelector(".contents__first-4");
 const animeHTMLEl2 = document.querySelector(".content-remains");
+const animeHeaderHTMLEl1 = document.querySelector()
+const getAnimehome = document.querySelector(".getAnimeHome")
+const getAnimeMovies = document.querySelector(".getAnimeMovies")
+const getManga = document.querySelector("getManga")
 // const theSpread = {search, anime, animePortal, animeData1, animeData2, animeDataArrays, animeElements}
 
 
@@ -20,7 +24,7 @@ async function onSearchChange(event) {
   const animeData2 = animePortal.data.slice(5, 25);
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
-
+  
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join("");
@@ -28,24 +32,49 @@ async function onSearchChange(event) {
   
 }
 
-async function theSpread(event) { 
-  const search = event.target.value
-  const anime = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&sfw=true`);
+
+// function animeHeaderTemplateHTML(event) {
+// }
+
+
+
+async function renderMovies(event) { 
+  console.log(event)
+  const anime = await fetch(`https://api.jikan.moe/v4/anime?type=movie&sfw=true`);
   const animePortal = await anime.json();
   const animeData1 = animePortal.data.slice(0, 4);
   const animeData2 = animePortal.data.slice(5, 25);
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
-
-  if (anime == anime) {
-    
-  }
+  
+  // if (event.target.classList.value === "menu__link getAnimeMovies link__hover-effect nope") {
+  //   return console.log("Outstanding")
+  // }
 
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join(""); 
   })
 }
+async function renderManga(data) { 
+  const anime = await fetch(`https://api.jikan.moe/v4/manga`);
+  const animePortal = await anime.json();
+  const animeData1 = animePortal.data.slice(0, 4);
+  const animeData2 = animePortal.data.slice(5, 25);
+  const animeDataArrays = [animeData1, animeData2];
+  const animeElements = [animeHTMLEl1, animeHTMLEl2];
+  
+  // if (event.target.classList.value === "menu__link getAnimeMovies link__hover-effect nope") {
+  //   return console.log("Outstanding")
+  // }
+
+  animeElements.forEach((elem, index) => {
+    elem.innerHTML = animeDataArrays[index].map((data) => 
+      animeTemplateHTML(data)).join(""); 
+  })
+}
+
+
 
 
 
@@ -63,6 +92,9 @@ async function renderAnime() {
   })
 }
 renderAnime();
+
+
+
 
 function animeTemplateHTML(data) {
   return` 

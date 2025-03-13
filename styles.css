@@ -1414,6 +1414,7 @@ CONTENTS
 .contents__title {
   padding-top: 0;
   padding-bottom: 12px;
+  width: 100%;
 }
 
 .contents__second-title {
@@ -1456,12 +1457,22 @@ CONTENTS
   border-radius: 4px;
 }
 
+
+.content {
+  background-color: #cac5c5;
+}
+
+.content-remains .content {
+  width: 180px;
+}
+
+
 .contents__first-4 .content {
   display: flex;
   flex-direction: column;
   flex-wrap: calc(100%/4);
   justify-content: center;
-  max-width: 240px;
+  width: 200px;
   margin: 8px 4px;
   box-shadow: 0px 0px 24px 12px #1b263b62;
 }
@@ -1704,14 +1715,14 @@ CONTENT RANKING
 
 .content-remains .content {
   display: flex;
+  width: 180px;
   flex-direction: column;
   margin: 8px 6px;
   box-shadow: 0px 0px 32px 12px #0825685d;
-  flex-wrap: calc(100% / 5);
 }
 
 .content-remains .content .content__title-text {
-  font-size: 10px;
+  font-size: 12px;
   max-height: 30px;
 }
 
@@ -1912,12 +1923,15 @@ CONTENT RANKING
   }
 
   .content__title {
-    font-size: 10px;
     max-height: 36px;
   }
 
   .content__description {
     font-size: 10px;
+  }
+
+  .content-remains .content {
+    width: 132px;
   }
 
   .content-remains .content .content__title-text {
@@ -2077,6 +2091,12 @@ CONTENT RANKING
   }
 
 
+
+.contents__first-4 .content {
+  flex-wrap: calc(100%/2);
+  width: 180px;
+  }
+
   .contents__first-4 .content,
   .content-remains .content {
     border-radius: 12px 12px 8px 8px;
@@ -2091,7 +2111,7 @@ CONTENT RANKING
   }
 
   .content-remains .content {
-    flex-wrap: calc(100%/2);
+    width: 120px;
   }
 
   .contents__title, 
@@ -2118,7 +2138,6 @@ CONTENT RANKING
   }
 
 .content__title {
-  font-size: 8px;
   max-height: 28px;
 }
 
@@ -2175,9 +2194,22 @@ CONTENT RANKING
     font-weight: 560;
   }
 
+  .contents__first-4 .content {
+  width: 160px;
+  }
+
   .contents__first-4 .content .content__title {
     max-height: 20px;
     padding: 2px;
+  }
+
+  .content-remains {
+    padding: 0;
+  }
+
+   .content-remains .content {
+    width: 100px;
+
   }
   
   .content-remains .content .content__title-text {
@@ -2300,6 +2332,17 @@ CONTENT RANKING
     padding: 16px 0;
   }
 
+  .contents__first-4 .content {
+    width: 140px;
+    height: 192px;  
+  }
+
+  .content-remains .content {
+    width: 128px;
+    height: 176px;
+  }
+
+
   .content-remains {
     padding: 16px;
   }
@@ -2312,18 +2355,21 @@ CONTENT RANKING
     font-size: 8px;
   }
 
-  .content-remains {
-    padding: 0;
-  }
-
-  .content-remains .content {
-    max-height: 116px;
-    max-width: 60px;
-  }
-
   .content__rank--title {
     padding-top: 6px;
     padding-bottom: 6px;
+  }
+
+  .contents__box {
+    width: 100%;
+  }
+
+  .contents__row {
+    justify-content: center;
+  }
+
+  .content__top-10 {
+    display: none;
   }
 }
 
@@ -2487,5 +2533,15 @@ CONTENT RANKING
 
   .row {
     padding: 0 16px;
+  }
+
+  .contents__first-4 .content {
+    width: 120px;
+    height: 164px;
+  }
+  
+  .content-remains .content {
+    width: 100px;
+    height: 144px;
   }
 }
