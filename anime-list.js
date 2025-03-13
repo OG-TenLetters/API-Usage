@@ -4,13 +4,28 @@
 const animeRankHTMLEl = document.querySelector(".contents__rank-box");
 const animeHTMLEl1 = document.querySelector(".contents__first-4");
 const animeHTMLEl2 = document.querySelector(".content-remains");
-const animeHeaderHTMLEl1 = document.querySelector()
+const contentsTitleEl1 = document.querySelector(".contents__title")
+const contentsTitleEl2 = document.querySelector(".contents__second-title")
 const getAnimehome = document.querySelector(".getAnimeHome")
 const getAnimeMovies = document.querySelector(".getAnimeMovies")
 const getManga = document.querySelector("getManga")
-// const theSpread = {search, anime, animePortal, animeData1, animeData2, animeDataArrays, animeElements}
 
+function renderMoviesToMain(event) {
+      renderMovies(event)
+}
 
+const urlParams1 = new URLSearchParams(window.location.search);
+if (urlParams1.get('rendermovie') === 'true') {
+  setTimeout(renderMoviesToMain, 500)
+}
+function renderMangaToMain(event) {
+      renderManga(event)
+}
+
+const urlParams2 = new URLSearchParams(window.location.search);
+if (urlParams2.get('rendermanga') === 'true') {
+  setTimeout(renderMangaToMain, 500)
+}
 
 
 let isModalOpen = false;
@@ -25,6 +40,8 @@ async function onSearchChange(event) {
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
   
+  contentsTitleEl1.innerHTML = "Results"
+  contentsTitleEl2.innerHTML = "Similar Results"
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join("");
@@ -50,7 +67,7 @@ async function renderMovies(event) {
   // if (event.target.classList.value === "menu__link getAnimeMovies link__hover-effect nope") {
   //   return console.log("Outstanding")
   // }
-
+  contentsTitleEl1.innerHTML = "Moooovies"
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join(""); 
@@ -67,7 +84,7 @@ async function renderManga(data) {
   // if (event.target.classList.value === "menu__link getAnimeMovies link__hover-effect nope") {
   //   return console.log("Outstanding")
   // }
-
+  contentsTitleEl1.innerHTML = "Manga"
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => 
       animeTemplateHTML(data)).join(""); 
@@ -86,7 +103,7 @@ async function renderAnime() {
   const animeData2 = animePortal.data.slice(5, 25);
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
-
+  contentsTitleEl1.innerHTML = "Anime"
   animeElements.forEach((elem, index) => {
     elem.innerHTML = animeDataArrays[index].map((data) => animeTemplateHTML(data)).join("");
   })

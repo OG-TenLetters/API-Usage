@@ -2274,6 +2274,15 @@ CONTENT RANKING
     font-size: 8px;
   }
 
+.languages__container .languages {
+  font-size: 12px;
+}
+
+.communitylink__container .fa-comments,
+.theme__container .fa-moon {
+  font-size: 16px;
+}
+
   .language {
     padding: 0 4px;
   }

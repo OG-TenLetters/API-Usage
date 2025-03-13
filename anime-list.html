@@ -39,18 +39,18 @@
           <div class="menu__styling">
           <ul class="menu__list">
             <li class="menu__links">
-              <a href="" class="menu__link link__hover-effect menu__login" onclick="closeMenu()">Login</a>
+              <a href="" class="menu__link link__hover-effect menu__login nope" onclick="closeMenu()">Login</a>
             </li>
             <li class="menu__links">
-              <a href="#" class="menu__link getAnimeHome link__hover-effect" onclick="renderAnime(event)" onclick="closeMenu()">Home</a>
-            </li>
-            <div class="menu__line"></div>
-            <li class="menu__links">
-              <a href="#" class="menu__link getAnimeMovies link__hover-effect" onclick="renderMovies(event)" onclick="closeMenu()">Movies</a>
+              <a href="#" class="menu__link getAnimeHome link__hover-effect" onclick="renderAnime(event), closeMenu()">Home</a>
             </li>
             <div class="menu__line"></div>
             <li class="menu__links">
-              <a href="#" class="menu__link getManga link__hover-effect" onclick="renderManga(event)" onclick="closeMenu()">Manga</a>
+              <a href="#" class="menu__link getAnimeMovies link__hover-effect" onclick="renderMovies(event), closeMenu()">Movies</a>
+            </li>
+            <div class="menu__line"></div>
+            <li class="menu__links">
+              <a href="#" class="menu__link getManga link__hover-effect" onclick="renderManga(event), closeMenu()">Manga</a>
             </li>
             <div class="menu__line"></div>
             <li class="menu__links">
@@ -264,7 +264,7 @@
       <div class="contents__container">
         <div class="contents__row">
           <div class="contents__box">
-            <div class="contents__title">Moooovies</div>
+            <div class="contents__title">Anime</div>
 
             <div class="contents__first-4">
               <div class="contents">

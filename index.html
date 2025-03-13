@@ -29,12 +29,12 @@
     <section id="landing-page">
       <nav class="nav1">
         <div class="nav__links">
-          <a href='#' class="nav__link link__hover-effect">Home</a>
-          <a href="" class="nav__link link__hover-effect link__drop">Movies</a>
-          <a href="" class="nav__link link__hover-effect link__drop">Manga</a>
-          <a href="" class="nav__link link__hover-effect link__drop">Shows</a>
-          <a href="" class="nav__link link__hover-effect">Featured</a>
-          <a href="" class="nav__link link__hover-effect">Personal List</a>
+          <a href="./anime-list.html" class="nav__link link__hover-effect">Home</a>
+          <a href="./anime-list.html?rendermovie=true" id="movieLink" class="nav__link link__hover-effect" >Movies</a>
+          <a href="./anime-list.html?rendermanga=true" id="mangaLink" class="nav__link link__hover-effect">Manga</a>
+          <a href="" class="nav__link link__hover-effect link__drop nope">Shows</a>
+          <a href="" class="nav__link link__hover-effect link__drop nope">Featured</a>
+          <a href="" class="nav__link link__hover-effect link__drop nope">Personal List</a>
           <a class="nav__link link__drop nav__link--primary link__hover-effect" onclick="toggleModal()"
             >Contact</a
           >
@@ -67,9 +67,11 @@
                 adipisicing elit. Accusamus placeat eatae eos consectetur nemo
                 voluptatibus iste, earum, quasi ad error maxime provident.
               </p>
+              <a href="./anime-list.html">
               <button class="header__btn header__btns">Start Here! 
                 <div class="icon__border"><i class="fa-solid fa-arrow-right"></i></div>
-            </button>
+              </button>
+            </a>
             </div>
             <div class="header__img--cover"></div>
             <figure class="header__img--wrapper">

@@ -1,3 +1,19 @@
+
+const movieLink = document.getElementById('movieLink');
+const mangaLink = document.getElementById('mangaLink');
+
+movieLink.addEventListener('click', function(event) {
+});
+mangaLink.addEventListener('click', function(event) {
+});
+
+
+
+
+
+
+
+
 let isModalOpen = false;
 
 function contact(event) {
