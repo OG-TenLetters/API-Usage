@@ -1472,7 +1472,7 @@ CONTENTS
 
 
 .content {
-  background-color: #cac5c5;
+  background-color: #cac5c541;
 }
 
 .content-remains .content {
@@ -1636,11 +1636,11 @@ CONTENT RANKING
 .contents__rank-box {
   padding: 8px 12px;
   padding-bottom: 28px;
-  position: relative;
   
 }
 
 .content__rank-box {
+  position: relative;
   padding: 4px 0;
 }
 
