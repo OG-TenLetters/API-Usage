@@ -45,8 +45,8 @@ async function onSearchChange(event) {
     contentsTitleEl2.innerHTML = "Similar Results"
   }
   else {
-    contentsTitleEl1.innerHTML = "Results"
-    contentsTitleEl2.innerHTML = "Similar"
+    contentsTitleEl1.innerHTML = "No Results"
+    contentsTitleEl2.innerHTML = ""
   }
 
   animeElements.forEach((elem, index) => {
