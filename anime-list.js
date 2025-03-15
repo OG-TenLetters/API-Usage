@@ -40,13 +40,13 @@ async function onSearchChange(event) {
   const animeData2 = animePortal.data.slice(5, 25);
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
-  if (anime =! undefined) {
+  if (anime ==! null) {
     contentsTitleEl1.innerHTML = "Results"
     contentsTitleEl2.innerHTML = "Similar Results"
   }
   else {
-    contentsTitleEl1.innerHTML = "No Results"
-    contentsTitleEl2.innerHTML = ""
+    contentsTitleEl1.innerHTML = "Results"
+    contentsTitleEl2.innerHTML = "Similar"
   }
 
   animeElements.forEach((elem, index) => {
