@@ -34,19 +34,20 @@ let lastScrollY = 0;
 async function onSearchChange(event) {
   const search = event.target.value
   const anime = await fetch(`https://api.jikan.moe/v4/anime?q=${search}&sfw=true`);
-  console.log(anime)
   const animePortal = await anime.json();
   const animeData1 = animePortal.data.slice(0, 4);
+  console.log(animePortal)
+  console.log(animeData1)
   const animeData2 = animePortal.data.slice(5, 25);
   const animeDataArrays = [animeData1, animeData2];
   const animeElements = [animeHTMLEl1, animeHTMLEl2];
-  if (anime ==! undefined) {
-    contentsTitleEl1.innerHTML = "Results"
-    contentsTitleEl2.innerHTML = "Similar Results"
-  }
-  else {
+  if (animeData1 <= 0) {
     contentsTitleEl1.innerHTML = "No Results"
     contentsTitleEl2.innerHTML = ""
+  }
+  else {
+    contentsTitleEl1.innerHTML = "Results"
+    contentsTitleEl2.innerHTML = "Similar Results"
   }
 
   animeElements.forEach((elem, index) => {
